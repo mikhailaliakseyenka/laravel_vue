@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: laravel_vue
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5437:5432"   # другой порт у блога 5436
+    volumes:
+      - db-data-new:/var/lib/postgresql/data
+    shm_size: 256mb
+
+volumes:
+  db-data-new:
