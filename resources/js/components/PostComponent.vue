@@ -1,12 +1,27 @@
-<script setup>
+<template>
+    <div>
+<!--        <single-post-component>-->
+            <SinglePostComponent>
+
+            </SinglePostComponent>
+
+<!--        </single-post-component>-->
+    </div>
+</template>
+
+<script>
+import SinglePostComponent from "./SinglePostComponent.vue";
+export default {
+    name: 'PostComponent',
+
+    components: {
+        SinglePostComponent
+    }
+
+}
 
 </script>
 
-<template>
-    <div class="container">
-        111111111111333
-    </div>
-</template>
 
 <style scoped>
 
