@@ -2,6 +2,8 @@
     <div>
         <SinglePostComponent></SinglePostComponent>
         <div>Name: {{name}}</div>
+        <div>Job: {{vasyaJob}}</div>
+        <div>Job: {{job}}</div>
         <button @click="sayHello">Hello</button>
         <button @click="sayHi">Hi</button>
 
@@ -18,6 +20,7 @@ export default {
         return {
             name: 'Vasya',
             age: 20,
+            job: this.name +' работает в булочной',
         }
     },
 
@@ -28,6 +31,13 @@ export default {
         sayHi() {
             console.log('Hi');
         },
+    },
+
+    computed: {
+        vasyaJob() {
+            return this.name + ' работает в булочной'
+        },
+
     },
 
     components: {
