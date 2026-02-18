@@ -2,6 +2,8 @@
     <div>
         <SinglePostComponent></SinglePostComponent>
         <div>Name: {{name}}</div>
+        <button @click="sayHello">Hello</button>
+        <button @click="sayHi">Hi</button>
 
     </div>
 </template>
@@ -16,18 +18,16 @@ export default {
         return {
             name: 'Vasya',
             age: 20,
-            boolean: false,
-            sameNull: null,
-            arr: [1,
-                [
-                    3,
-                ]
-            ],
-            someObj: {
-                person: 'Ivan'
-            },
-
         }
+    },
+
+    methods: {
+        sayHello() {
+            console.log('Hello');
+        },
+        sayHi() {
+            console.log('Hi');
+        },
     },
 
     components: {
