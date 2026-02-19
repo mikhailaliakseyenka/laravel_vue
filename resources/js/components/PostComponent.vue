@@ -12,7 +12,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="person in persons">
+                <tr v-for="person in personAgeMoreTwenty">
                     <th scope="row">{{ person.id }}</th>
                     <td>{{ person.name }}</td>
                     <td>{{ person.age }}</td>
@@ -43,8 +43,8 @@ export default {
                 },
                 {
                     id: 2,
-                    name: 'Ilya',
-                    age: 23,
+                    name: 'Ola',
+                    age: 17,
                     job: 'QI',
                 },
                 {
@@ -52,7 +52,19 @@ export default {
                     name: 'Miha',
                     age: 32,
                     job: 'Programer',
-                }
+                },
+                {
+                    id: 2,
+                    name: 'Egor',
+                    age: 23,
+                    job: 'traveler',
+                },
+                {
+                    id: 3,
+                    name: 'Kostiay',
+                    age: 32,
+                    job: 'tither',
+                },
             ],
         }
     },
@@ -67,9 +79,13 @@ export default {
     },
 
     computed: {
-        vasyaJob() {
-            return this.name + ' работает в булочной'
+        personAgeMoreTwenty() {
+            return this.persons.filter(function (person) {
+                return person.age > 20;
+            });
         },
+
+
 
     },
 
