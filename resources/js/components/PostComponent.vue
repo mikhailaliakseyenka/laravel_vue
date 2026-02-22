@@ -12,7 +12,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="person in personAgeMoreTwenty">
+                <tr v-for="person in persons">
                     <th scope="row">{{ person.id }}</th>
                     <td>{{ person.name }}</td>
                     <td>{{ person.age }}</td>
@@ -34,60 +34,27 @@ export default {
     data() {
         return {
 
-            persons: [
-                {
-                    id: 1,
-                    name: 'Vasya',
-                    age: 20,
-                    job: 'coach',
-                },
-                {
-                    id: 2,
-                    name: 'Ola',
-                    age: 17,
-                    job: 'QI',
-                },
-                {
-                    id: 3,
-                    name: 'Miha',
-                    age: 32,
-                    job: 'Programer',
-                },
-                {
-                    id: 2,
-                    name: 'Egor',
-                    age: 23,
-                    job: 'traveler',
-                },
-                {
-                    id: 3,
-                    name: 'Kostiay',
-                    age: 32,
-                    job: 'tither',
-                },
-            ],
+            persons: null
         }
     },
 
+    mounted() {
+        this.getPersons();
+    },
+
     methods: {
-        sayHello() {
-            console.log('Hello');
-        },
-        sayHi() {
-            console.log('Hi');
-        },
+        getPersons: function () {
+            axios.get('/persons')
+                .then(res => {
+                    this.persons = res.data;
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .finally({})
+        }
     },
 
-    computed: {
-        personAgeMoreTwenty() {
-            return this.persons.filter(function (person) {
-                return person.age > 20;
-            });
-        },
-
-
-
-    },
 
     components: {
         SinglePostComponent
