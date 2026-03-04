@@ -43,7 +43,7 @@ export default {
         return {
             people: null,
             editPerson: null,
-            name: '',
+            name: 'Miha',
             age: null,
             job: '',
         }
@@ -97,6 +97,10 @@ export default {
 
         isEdit(id) {
             return this.editPerson === id;
+        },
+
+        indexLog() {
+            console.log('this is index component');
         }
 
 

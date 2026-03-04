@@ -2,7 +2,7 @@
     <div>
         <CreateComponent></CreateComponent>
         <SinglePostComponent></SinglePostComponent>
-        <IndexComponent></IndexComponent>
+        <IndexComponent ref="index"></IndexComponent>
         <div>
 <!--            <table class="table">-->
 <!--                <thead>-->
@@ -42,6 +42,8 @@ export default {
     },
 
     mounted() {
+        console.log(this.$refs.index.name); // так вызываем метод у дочернего елемента
+        console.log(this.$refs.index.indexLog());
     },
 
     methods: {
