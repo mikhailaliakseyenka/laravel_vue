@@ -43,7 +43,7 @@ export default {
         return {
             people: null,
             editPerson: null,
-            name: 'Miha',
+            name: '',
             age: null,
             job: '',
         }
@@ -51,6 +51,8 @@ export default {
 
     mounted() {
         this.getPeople();
+
+        this.$parent.parentLog(); // вызов родительского метода
     },
 
 
