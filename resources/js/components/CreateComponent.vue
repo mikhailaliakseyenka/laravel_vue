@@ -12,10 +12,13 @@
         <div class="mb-3">
             <input @click.prevent="addPerson" class="btn btn-primary" value="Add">
         </div>
+        <SomeComponent></SomeComponent>
     </div>
 </template>
 
 <script>
+
+import SomeComponent from "./SomeComponent.vue";
 
 export default {
 
@@ -25,6 +28,10 @@ export default {
             age: null,
             job: null,
         }
+    },
+
+    mounted() {
+        this.$parent.$refs.index.indexLog();
     },
 
     methods: {
@@ -41,7 +48,11 @@ export default {
                         console.log(res);
                 })
         }
-    }
+    },
+
+    components: {
+        SomeComponent,
+    },
 }
 
 
