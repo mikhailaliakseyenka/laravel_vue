@@ -12,7 +12,7 @@
         <div class="mb-3">
             <input @click.prevent="addPerson" class="btn btn-primary" value="Add">
         </div>
-        <SomeComponent></SomeComponent>
+        <SomeComponent :obj="obj"></SomeComponent>
     </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
             name: null,
             age: null,
             job: null,
+            obj: {
+                color: 'yelloy',
+                number: 50,
+                isPublished: false,
+            },
         }
     },
 
